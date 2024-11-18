@@ -1,8 +1,11 @@
+package test;
 
-public class 세번째자바 {
+public class test_test {
+
 	public static void main(String[] args) {
+		System.out.println("hello java");
 		// TODO Auto-generated method stub
-		System.out.println(" 세번째 Hello"); 
-		
+
 	}
+
 }
