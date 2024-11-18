@@ -13,13 +13,18 @@
  		javac		  java
  			     |
  			 01010001001
- public class MainClass{}
+ public class MainClass
+ 	{
+ 	
+ 	}
  
  자바는 1995 년 5 월 23 일 13 시 35분 52초 자바가 시작됨 한국은 1996년
   */
 public class MainClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Hello java!!"); 
+		System.out.println("Hello java!!!"); 
+		
+		
 	}
 }
