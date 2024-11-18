@@ -13,7 +13,7 @@
  		javac		  java
  			     |
  			 01010001001
- public class MainClass
+ public class MainClass 25page참조
  	{
  	
  	}
