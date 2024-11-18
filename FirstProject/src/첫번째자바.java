@@ -68,6 +68,8 @@
 		목요일 , 금요일(1주일 정리)
  */
 public class 첫번째자바 {
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
