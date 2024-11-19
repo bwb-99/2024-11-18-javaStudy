@@ -34,13 +34,27 @@
  *	  실수 => double => 데이터형 중에 가장 큰 데이터형
  *	  		=> boolean은 숫자가 아니다
  *
+ *    //final => 상수
+ *	  값 교환
+ *
+ *	  int a=10;
+ *	  int b=20;
+ *		
+ *	  a=b; a=20
+ *	  b=a; b=20
+ *
+ *    int a=10;
+ *    int b=20;
+ *    
+ *    int temp=a;
+ *    a=b
+ *    b=temp
  *
  *
  */
 public class 변수_4 {
 	public static void main(String[] args) {
 		int a =10;
-		a=20;
 		final int A=100; // final 붙어있으면 상수
 		
 		System.out.println(A);
