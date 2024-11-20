@@ -45,20 +45,25 @@
  *  		   ====== 앞에 false 경우 연산처리는 하지않는다 => 효율적인 연산
  *  	x=? => 10
  *  	y=? => 9
- *  
- *  	=> 연산자 : 산술연산자
- *  		38Page
- *  		41page => 증가연산자 ++
- *  		43pgae => 감소
- *    		44page	비교
- *    		45pgae	논리
- *    		47page	or
+ *        
  *		|| => 앞에 조건 ==> true 
  *  	x<y || x==++y == true
  *  		   ======연산처리한다 => 효율적인 연산
  *  	x=? => 10
- *  	y=? => 10 
+ *  	y=? => 10
+ *  
+ *     => 연산자 : 산술연산자 
+ *        38page 
+ *        41page => 증가연산자 ++
+ *        43page => 감소연산자 --
+ *        44page => 비교연산자 == , != , < , > , <= , >=
+ *        45page => 논리연산자 &&
+ *        47page => ||
+ *        
  */
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class 연산자_이항연산자_논리연산자1 {
 
 	public static void main(String[] args) {
