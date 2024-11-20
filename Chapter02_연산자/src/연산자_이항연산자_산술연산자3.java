@@ -1,6 +1,6 @@
 // => 임의로 변수 초기화
 //	난수 => Math.random()
-/*	  Math.random() ==> double
+/*	  Math.random() ==> double(소수점 실수)
  * 						0.0~0.99
  * 	  1~100
  * 		(int)(Math.random()*100)+1
