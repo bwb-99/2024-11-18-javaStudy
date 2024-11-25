@@ -3,8 +3,8 @@ public class 제어문_문제8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int i=0, num=0;
-		for( i=1;i<=10;i++)
+		int num=0;
+		for(int i=1;i<=10;i++)
 		{
 			if(i%3!=0)
 				System.out.print(i+" ");
@@ -24,7 +24,7 @@ public class 제어문_문제8 {
 		 *   		  i=0
 		 *   	 for(초기식;조건식;증가식)
 		 *   		 반복 실행 문장
-		 *   page 68까지 나감
+		 *   page 68까지
 		 */
 				
 			

@@ -8,11 +8,11 @@ public class 제어문_문제5 {
 		System.out.print("정수를 입력하시오:");
 		int sum=0;
 		int num =scan.nextInt();
-		for(int i =1; i<=num;i++)
+		for(int i =1;i<=num;i++)
 		{
 			sum+=i;
 		}
-			System.out.println("sum="+sum);
+		System.out.println("sum="+sum);
 
 	}
 
