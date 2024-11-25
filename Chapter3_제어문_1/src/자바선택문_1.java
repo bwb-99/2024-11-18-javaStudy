@@ -28,13 +28,54 @@
  * 			}
  * 
  * 			예)
- * 				90~100 => A
+ * 				90~100 => A => 90~100 => 1- => case문장을 최대한 줄여사 사용
+ * 				case 10:
+ * 				case 9:
+ * 				  A
+ * 				  break
+ * 					
+ *        		case 10: case 9: ==> if(score=10 || score==9)
+ *        			처리문장
+ *        			break;
+ *        
  * 				
  */
+//다중조건문 동일 => 한개의 case에 있는 문장만 수행
 public class 자바선택문_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int score=(int)(Math.random()*101);
+		int avg=score/10; //10~0
+		/*
+		 * 		주의점
+		 * 		1) case는 동일하면 안된다
+		 * 		2) 정렬할 필요가 없다
+		 */
+		switch(avg) // 정수, 문자, 문자여람ㄴ 사용이 가능
+		{
+		case 10: case 9: // 같은 출력이 있는 경우에는
+			// avg==10 || avg==9
+			// 다중조건문보다 가독성이 좋다
+			// ======= 범위를 지정하기 때문에 => 페이징
+			//선택문은 범위 지정이 불가능
+			// => 데이터베이스는 10000단위 저장
+			// 놓침 다시작성하기
+			System.out.println(score+"점은 A등급입니다");
+			break;// 수행후 종료
+		case 7:
+			System.out.println(score+"점은 B등급입니다");
+			break;
+		case 6:
+			System.out.println(score+"점은 C등급입니다");
+			break;
+		case 5:
+			System.out.println(score+"점은 D등급입니다");
+			break;
+		default: // 생략이 가능
+			System.out.println(score+"점은 F등급입니다");
+			
+		}
 
 	}
 
