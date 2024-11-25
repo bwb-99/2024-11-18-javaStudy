@@ -14,12 +14,13 @@ public class 반복문_2 {
 			System.out.print(i+" ");
 		}
 		System.out.println();
+		// A~Z
 		for(char c='A';c<='Z';c++)
 		{
 			System.out.print(c);
 		}
 		System.out.println();
-		System.out.println();
+		// Z~A
 		for(char c='Z';c>='A';c--)
 		{
 			System.out.print(c);
