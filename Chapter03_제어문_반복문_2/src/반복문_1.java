@@ -12,7 +12,7 @@
  * 				case 값1:
  * 				 실행문장
  */
-public class 반복문_1 {
+public class 반복문_1 { 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
