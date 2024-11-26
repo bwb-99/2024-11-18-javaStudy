@@ -106,7 +106,7 @@ public class 반복문_3 {
 				}
 				System.out.println();
 			}
-
+  
 	}
 
 }
