@@ -1,12 +1,13 @@
 /*
- * 		반복문 -> for		
+ * 		반복문 -> for	 	
  * 		1.	형식 => 65page
  * 			for(초기식;조건식;증감식)
  * 			{
  * 				반복 수행 문장
+ * 				여러개 올 수 있다
  * 			}
  * 
- * 			=> 향상된 for => for-each : 1.5
+ * 			=> 향상된 for => for-each : jDK 1.5
  * 						   --------- 배열 / Collection
  * 						   --------- 웹에서 주로 사용
  * 						   VueJS/ReactJS
