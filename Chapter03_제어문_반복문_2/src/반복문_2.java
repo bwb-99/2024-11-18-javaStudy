@@ -16,7 +16,7 @@ public class 반복문_2 {
 		{
 			for(int j=2;j<=9;j++)
 			{
-			System.out.printf("%2d * %2d = %2d\t",j,i,j*i);
+			System.out.printf("%2d * %2d = %2d\n",j,i,j*i);
 			}
 		}
 		System.out.println();
