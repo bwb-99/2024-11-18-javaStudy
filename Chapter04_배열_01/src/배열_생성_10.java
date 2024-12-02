@@ -10,7 +10,7 @@
  * 		==> 3S
  * 
  */
-import java.util.Arrays;
+import java.util.Arrays; 
 import java.util.Scanner;
 public class 배열_생성_10 {
 	public static void main(String[] args) {
