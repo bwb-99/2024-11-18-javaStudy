@@ -15,7 +15,7 @@ public class 배열_생성_3 {
 		Scanner scan=new Scanner(System.in);
 		System.out.print("0~32767사이 정수 입력:");
 		int num=scan.nextInt();
-		System.out.println(Integer.toBinaryString(num));
+		//System.out.println(Integer.toBinaryString(num));
 		// 저장 공간 0,1 => 16개
 		int[] binary=new int[16];
 		// 앞에서 => index=0, 뒤에서부터 => index=15

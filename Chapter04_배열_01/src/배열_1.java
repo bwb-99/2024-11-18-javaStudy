@@ -94,7 +94,7 @@ public class 배열_1 {
 		System.out.printf("%d %d %d %d %.2f\n",
 				kor2,eng2,math2,total2,avg2);
 		System.out.printf("%d %d %d %d %.2f\n",
-				kor3,eng3,math3,total3,avg1);
+				kor3,eng3,math3,total3,avg3);
 		//배열 한개의 변수명을 이용한다 => 제어
 		// 클래스 => 인터페이스
 
