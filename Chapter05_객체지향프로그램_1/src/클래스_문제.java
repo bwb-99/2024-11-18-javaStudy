@@ -14,7 +14,7 @@ class 문제2
 	String poster;
 	String title;
 	String chef;
-	String chef_poster;
+	String chef_poster; 
 	int hit;
 	int star;
 }

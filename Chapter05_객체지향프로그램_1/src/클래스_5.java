@@ -16,7 +16,7 @@ class Student  // 데이터형 => 배열이 가능 => Collection
 	char score;
 	String school_name; // 범위 
 }
-// int[] arr=new int[3]; 0 0 0
+// int[] arr=new int[3]; 0 0 0 
 public class 클래스_5 {
 
 	public static void main(String[] args) {
