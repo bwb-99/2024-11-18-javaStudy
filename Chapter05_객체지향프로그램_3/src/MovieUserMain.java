@@ -25,7 +25,7 @@ public class MovieUserMain {
 			{
 				System.out.print("페이지 선택:");
 				int page=scan.nextInt();
-				Movie[] movies=ms.movieListData(page);
+				Movie[] movies=ms.movieListData(page); 
 				for(Movie m:movies)
 				{
 					System.out.println(m.no+"."+m.title);

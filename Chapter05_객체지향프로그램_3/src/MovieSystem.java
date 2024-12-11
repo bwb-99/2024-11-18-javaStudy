@@ -56,7 +56,7 @@ public class MovieSystem {
 		int end=page*ROWSIZE;
 		int totalpage=(int)(Math.ceil(movies.length/20.0));
 		int ARRSIZE=20;
-		if(page==totalpage)
+		if(page==totalpage) 
 		{
 			end=page*ROWSIZE-2;
 			ARRSIZE=18;

@@ -1,7 +1,7 @@
 //문제1
 
 class PlayingCard {
-	
+	 
 
 int kind; //인스턴스변수
 int num;  // 인스턴스변수 
