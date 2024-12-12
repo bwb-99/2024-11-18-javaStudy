@@ -1,4 +1,4 @@
-package com.sisit.main;
+package com.sist.win;
 /*
  * 		194page
  * 		상속 : 이미 만들어진 클래스를 재사용

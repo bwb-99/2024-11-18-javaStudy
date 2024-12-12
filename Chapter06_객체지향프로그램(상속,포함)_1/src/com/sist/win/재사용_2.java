@@ -1,4 +1,4 @@
-package com.sisit.main;
+package com.sist.win;
 class 사람
 {
 	String name, sex, address ,phone;
