@@ -1,4 +1,4 @@
-package com.sist.win;
+package com.sist.main;
 /*
  * 		자바의 기본형식
  * 		package => 1번만 사용이 가능 => 첫줄에 사용
