@@ -5,13 +5,13 @@ class Super
 	int b=20;
 	public Super()
 	{
-		System.out.println("Super() Call");
+		System.out.println("Super() Call...");
 	}
 }
 class Sub extends Super
 {
-	//a,b
-	int a,b; // 변수 오버라이딩
+	// a,b
+	int a,b;// 변수 오버라이딩 
 	public Sub()
 	{
 		System.out.println("Sub() Call");
@@ -25,15 +25,16 @@ class Sub extends Super
 		System.out.println("Super:a="+super.a);
 		System.out.println("Super:b="+super.b);
 		System.out.println("Sub:a="+this.a);
-		System.out.println("Sub:b="+this.b);
+		System.out.println("Sub:a="+this.b);
+		
 	}
 }
 public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Sub s=new Sub();
-		s.display();
+        Sub s=new Sub();
+        s.display();
 	}
 
 }

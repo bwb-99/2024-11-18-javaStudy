@@ -1,6 +1,6 @@
 package com.sist.main;
 
-import java.awt.Color; 
+import java.awt.Color;  
 import java.awt.Font;
 
 import javax.swing.*;
