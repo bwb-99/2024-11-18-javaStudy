@@ -38,49 +38,21 @@ package com.sist.main;
  *				=> A a=new B();
  *				=> 확인 ㅣ instanceof |
  */
+interface A
+{
+	public void aaa();
+	public void bbb();
+	public void ccc();
+	public void ddd();
+	public void eee();
+}
 public class 인터페이스_1 {
-	interface A
-	{
-		public void aaa();
-		public void bbb();
-		public void ccc();
-		public void ddd();
-		public void eee();
-	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//쉽게 구분 => 람다식
-		
-		A a=new A() {
-			
-			@Override
-			public void aaa() {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			
-			@Override
-			public void bbb() {
-				
-			}
-			
-			@Override
-			 public void ccc() {
-			}
-			
-			@Override
-			 public void ddd() {
-			}
-			
-			@Override
-			 public void eee() {
-			}
-			 
-			
-		};
-
+        // 쉽게 구현 => 람다식  -> 
 	}
 
 }
+
+

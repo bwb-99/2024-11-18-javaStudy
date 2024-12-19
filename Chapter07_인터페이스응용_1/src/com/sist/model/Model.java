@@ -1,7 +1,5 @@
 package com.sist.model;
-{
-	
-}
-public class Model {
 
+public interface Model {
+  public void execute();
 }

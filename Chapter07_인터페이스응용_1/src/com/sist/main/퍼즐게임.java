@@ -1,6 +1,6 @@
 package com.sist.main;
 
-import javax.swing.*;
+import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;// 인터페이스
 
@@ -42,11 +42,11 @@ implements ActionListener,MouseListener
 		b1=new JButton("시작");
 		b2=new JButton("종료");
 		
-		JPanel p=new JPanel();
+		JPanel p=new JPanel(); // 컴퍼넌트 여러개 묶어서 배치
 		
 		JPanel pan=new JPanel();
 		pan.setLayout(new GridLayout(3,3,5,5));
-		for(int i=1; i<=9;i++)
+		for(int i=1; i<9;i++)
 		{
 			btns[i]=new JButton(String.valueOf(i+1));
 			btns[i].setFont(new Font("궁서체", Font.BOLD,45));
@@ -59,9 +59,9 @@ implements ActionListener,MouseListener
 	pan.setBounds(10, 15, 350, 350);
 	add(pan);
 	
-	p.add(b1);
+	p.add(b1);p.add(b2);
 	p.setBounds(10, 370, 350, 35);
-	
+	add(p);
 	
 	setSize(380,470);
 	setVisible(true);
@@ -76,30 +76,49 @@ implements ActionListener,MouseListener
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new 퍼즐게임();
+	    }
+	    // 버튼 처리하는 메소드 => 개발자 구현 => 자동 호출
 	@Override
-	public void ActionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		for(int i=0;i<9;i++)
 		{
 		
+			if(e.getSource()==btns[last])
+			{
+				return;
+			}
 			if(e.getSource()==btns[i])
 			{
 				panCount[i]=8;
-				panCount[last]=Integer.parseInt(btns[i].getText());
-				last=i;
-				
-				puzzleLayout();
-			}
-		}
-	}
+			  
+		      panCount[last]=Integer.parseInt(btns[i].getText())-1;
+		      
+		      last=i;
+		      
+		      puzzleLayout();
+		      
+			   if(isEnd())
+			   {
+				   JOptionPane.showMessageDialog(this, "Game Over!!");
+				   //System.exit(0);
+			   }
+		   }
+		}	
+		
 		if(e.getSource()==b2)
 		{
 			System.exit(0); //프로그램 종료
 		}
 		else if(e.getSource()==b1)
 		{
-			getLan
+			getRand();
+			puzzleLayout();
+			
 		}
-	}// 사용자 정으 메소드
+		
+ }
+	// 사용자 정으 메소드
 	 public void getRand()
 	 {
 		 for(int i=0;i<9;i++)
@@ -134,40 +153,47 @@ implements ActionListener,MouseListener
 			 }
 			 else
 			 {
-				 btns[i].setText(String.valueOf(panCount[i]))
+				 btns[i].setText(String.valueOf(panCount[i]+1));
 			 }
 		 }
 	 }
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+	    public boolean isEnd()
+	    {
+	    	for(int i=0;i<9;i++)
+	    	{
+	    		if(panCount[i]!=i)
+	    			return false;
+	    	}
+	    	return true;
+	    }
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	    	
+	
 		
-	}
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	}
 
