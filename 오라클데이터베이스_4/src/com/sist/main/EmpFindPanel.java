@@ -14,7 +14,7 @@ public class EmpFindPanel extends JPanel{
     	setLayout(new BorderLayout());
     	box.addItem("ename");
     	box.addItem("hiredate");
-    	box.addItem("dname");
+    	box.addItem("dname"); 
     	box.addItem("loc");
     	/*
     	 *   <select>
