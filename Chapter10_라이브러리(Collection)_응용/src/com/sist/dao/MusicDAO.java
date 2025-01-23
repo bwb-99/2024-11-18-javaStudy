@@ -11,7 +11,7 @@ package com.sist.dao;
  *   3. 검색 => ArrayList
  *   4. 게시판 => LinkedList 
  *               => 수정 / 삭제 => 빠르다 
- *   5. 구매 => Map 
+ *   5. 구매 => Map  
  *               => 두개 저장 
  *   6. 찜하기 => Set
  *               => 한사람당 1개만 
