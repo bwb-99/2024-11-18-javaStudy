@@ -3,6 +3,7 @@ package com.sist.main;
 import java.util.*;
 public class Emp {
 	private int empno; //사번
+<<<<<<< HEAD
 	private String ename; // 이름
 	private String job; // 직위
 	private int mgr; // 사수 사번 => JOIN
@@ -51,5 +52,13 @@ public class Emp {
 	public void setDeptno(int deptno) {
 		this.deptno = deptno;
 	}
+=======
+	private String name; // 이름
+	private String job; // 직위
+	private int mgr; // 사수 사번 => JOIN
+	private int sal; // 급여
+	private int comm; // 성과급
+	private int deptno;  // 부서번호
+>>>>>>> refs/remotes/origin/master
 
 }

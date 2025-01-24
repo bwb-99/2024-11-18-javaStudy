@@ -51,6 +51,7 @@
  *					
  */ 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* 
  * 				 
  */
@@ -78,6 +79,9 @@ public class 반복문_1 {
 	} 
 =======
 /*
+=======
+/* 
+>>>>>>> refs/remotes/origin/master
  * 				 
  */
 public class 반복문_1 { 
@@ -101,7 +105,11 @@ public class 반복문_1 {
 		 * 
 		 */
 
+<<<<<<< HEAD
 	}
 >>>>>>> refs/remotes/origin/master_0
+=======
+	} 
+>>>>>>> refs/remotes/origin/master
 
 }

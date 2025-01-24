@@ -14,6 +14,7 @@ public class EmpFindPanel extends JPanel{
     	setLayout(new BorderLayout());
     	box.addItem("ename");
     	box.addItem("hiredate");
+<<<<<<< HEAD
     	box.addItem("dname"); 
     	box.addItem("loc");
     	/*
@@ -30,6 +31,24 @@ public class EmpFindPanel extends JPanel{
     	p.add(b);
     	add("North",p);
     	 
+=======
+    	box.addItem("dname");
+    	box.addItem("loc");
+    	/*
+    	 *   <select>
+    	 *     <option value="ename">이름</option>
+    	 *     <option>입사일</option>
+    	 *     <option>부서명</option>
+    	 *     
+    	 *   </select>
+    	 */
+    	JPanel p=new JPanel();
+    	p.add(box);
+    	p.add(tf);
+    	p.add(b);
+    	add("North",p);
+    	
+>>>>>>> refs/remotes/origin/master
     	String[] col={"사번","이름","직위","입사일","부서명","근무지"};
     	String[][] row=new String[0][6];
     	// 익명의 클래스 => 상속이 없이 오버라이딩이 가능하게 만든다

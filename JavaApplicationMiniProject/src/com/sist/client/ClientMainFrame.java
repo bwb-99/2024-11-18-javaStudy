@@ -59,6 +59,7 @@ implements ActionListener,Runnable,MouseListener
 		mf.b2.addActionListener(this); // 맛집
 		mf.b3.addActionListener(this); // 검색
 		mf.b7.addActionListener(this); // 뉴스 
+<<<<<<< HEAD
 		mf.b5.addActionListener(this); // 커뮤니티
 		// Chat => Socket 
 		cp.cp.tf.addActionListener(this);
@@ -263,6 +264,207 @@ implements ActionListener,Runnable,MouseListener
 		else if(e.getSource()==mf.b5)
 		{
 			cp.card.show(cp, "BLIST");
+=======
+		// Chat => Socket 
+		cp.cp.tf.addActionListener(this);
+		cp.cp.table.addMouseListener(this);
+		cp.cp.b2.addActionListener(this);// 정보보기
+		cp.cp.b1.addActionListener(this);// 쪽지보내기
+		
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try
+				{
+					out.write((Function.EXIT+"|\n").getBytes());
+				}catch(Exception ex) {}
+			}
+			
+		});
+	}
+	public static void main(String[] args) {
+		try
+		{
+			UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+		}catch(Exception ex) {}
+		new ClientMainFrame();
+	}
+	// 서버에서 응답 받기 => 쓰레드 
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try
+		{
+			while(true)
+			{
+				String msg=in.readLine();
+				// 서버에서 보낸값을 받는다 
+				StringTokenizer st=
+						new StringTokenizer(msg,"|");
+				int protocol=Integer.parseInt(st.nextToken());
+				switch(protocol)
+				{
+				  case Function.LOGIN:
+				  {
+					  String[] data= {
+						st.nextToken(),
+						st.nextToken(),
+						st.nextToken()
+					  };
+					  cp.cp.model.addRow(data);
+				  }
+				  break;
+				  case Function.MYLOG:
+				  {
+					  String id=st.nextToken();
+					  setTitle(id);
+					  login.setVisible(false);
+					  setVisible(true);
+				  }
+				  break;
+				  case Function.WAITCHAT:
+				  {
+					  cp.cp.ta.append(st.nextToken()+"\n");
+				  }
+				  break;
+				  case Function.MYEXIT:
+				  {
+					  dispose();
+					  System.exit(0);
+				  }
+				  break;
+				  // 남아 있는 사람 처리 
+				  case Function.EXIT:
+				  {
+					  String yid=st.nextToken();
+					  for(int i=0;i<cp.cp.model.getRowCount();i++)
+					  {
+						  String id=cp.cp.model.getValueAt(i, 0).toString();
+						  if(yid.equals(id))
+						  {
+							  cp.cp.model.removeRow(i);
+							  break;
+						  }
+					  }
+				  }
+				  break;
+				}
+			}
+		}catch(Exception ex) {}
+	}
+	// 서버에 요청 => 로그인 / 채팅 보내기 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==login.b2)
+		{
+			dispose();// 윈도우 메모리 해제 
+			System.exit(0); // 프로그램 종료
+		}
+		else if(e.getSource()==login.b1)
+		{
+			// 유효성 검사 
+			String id=login.tf.getText();
+			if(id.trim().length()<1)
+			{
+				JOptionPane.showMessageDialog(this,
+						"아이디를 입력하세요");
+				login.tf.requestFocus();
+				return;
+			}
+			String pwd=String.valueOf(login.pf.getPassword());
+			if(pwd.trim().length()<1)
+			{
+				JOptionPane.showMessageDialog(this,
+						"비밀번호를 입력하세요");
+				login.pf.requestFocus();
+				return;
+			}
+			// 로그인 검색 
+			MemberVO vo=mDao.isLogin(id, pwd);
+			if(vo.getMsg().equals("NOID"))
+			{
+				JOptionPane.showMessageDialog(this, 
+						"아이디가 존재하지 않습니다");
+				login.tf.setText("");
+				login.pf.setText("");
+				login.tf.requestFocus();
+			}
+			else if(vo.getMsg().equals("NOPWD"))
+			{
+				JOptionPane.showMessageDialog(this, 
+						"비밀번호가 틀립니다");
+				login.pf.setText("");
+				login.pf.requestFocus();
+			}
+			else
+			{
+				// 서버연결 park
+				connection(vo);
+			}
+		}
+		else if(e.getSource()==cp.cp.b2)
+		{
+			if(selectRow==-1)
+			{
+				JOptionPane.showMessageDialog(this, 
+						"정보볼 대상을 선택하세요");
+				return;
+			}
+			
+			String id=cp.cp.model.getValueAt(selectRow, 0)
+					  .toString();
+			
+			MemberVO vo=mDao.memberInfo(id);
+			
+			String info="이름:"+vo.getName()+"\n"
+					   +"성별:"+vo.getSex()+"\n"
+					   +"이메일:"+vo.getEmail()+"\n"
+					   +"생년월일:"+vo.getBirthday().toString()+"\n"
+					   +"주소:"+vo.getAddress()+"\n"
+					   +"등록일:"+vo.getRegdate().toString();
+			JOptionPane.showMessageDialog(this, info);
+			
+		}
+		// chat처리 
+		else if(e.getSource()==cp.cp.tf)
+		{
+			String msg=cp.cp.tf.getText();
+			if(msg.trim().length()<1)
+			{
+				cp.cp.tf.requestFocus();
+				return;
+			}
+			
+			try
+			{
+			  out.write((Function.WAITCHAT+"|"
+					  +msg+"\n").getBytes());	
+			}catch(Exception ex){}
+			
+			cp.cp.tf.setText("");
+		}
+		else if(e.getSource()==mf.b6)
+		{
+			cp.card.show(cp, "CHAT");
+		}
+		else if(e.getSource()==mf.b1)
+		{
+			cp.card.show(cp, "HOME");
+		}
+		else if(e.getSource()==mf.b2)
+		{
+			cp.card.show(cp, "FOOD");
+		}
+		else if(e.getSource()==mf.b3)
+		{
+			cp.card.show(cp, "FIND");
+		}
+		else if(e.getSource()==mf.b7)
+		{
+			cp.card.show(cp, "DETAIL");
+>>>>>>> refs/remotes/origin/master
 		}
 	}
 	public void connection(MemberVO vo)

@@ -28,6 +28,7 @@ public class EmpDAO {
 		
 	}
 	// 연결
+<<<<<<< HEAD
 	// => 위탁
 		public void getConnection()
 		{
@@ -69,4 +70,45 @@ public class EmpDAO {
 			return list;
 		}
 	
+=======
+		public void getConnection()
+		{
+		try
+		{
+			conn=DriverManager.getConnection(url,username,password);
+		}catch(Exception ex) {}
+	 }
+		public void disConnection()
+		{
+			try
+			{
+				getConnection();
+				String sql="SELECT empno,ename,job FROM emp";
+				ps=conn.prepareStatement(sql);
+				ResultSet rs=ps.executeQuery();
+				while(rs.next())
+				{
+					Emp emp=new Emp();
+					emp.setEmpno(rs.getInt(1));
+					emp.setEname(rs.getString(2));
+					emp.setJob(rs.getString(3));
+					
+							
+				}
+				if(ps!=null)ps.close();
+				if(conn!=null) conn.close();
+			}catch(Exception ex)
+			{
+				ex.printStackTrace();
+			}
+			finally
+			{
+				disConnection();
+				
+			}
+			return list;
+		}
+	
+
+>>>>>>> refs/remotes/origin/master
 }
